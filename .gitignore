@@ -47,3 +47,10 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+.replit
+replit.nix
+.replitignore
+
+# Environment
+.env
+uploads/

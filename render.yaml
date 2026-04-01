@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: holtek-solutions
+    plan: free
+    runtime: static
+    region: oregon
+    branch: main
+    buildCommand: npm install -g pnpm && pnpm install && pnpm --filter @workspace/holtek-solutions run build
+    staticPublishPath: ./artifacts/holtek-solutions/dist/public
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BASE_PATH
+        value: /
+      - key: PORT
+        value: 3000
