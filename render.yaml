@@ -1,7 +1,6 @@
 services:
   - type: web
     name: holtek-solutions
-    plan: free
     runtime: static
     branch: main
     buildCommand: npm install -g pnpm && pnpm install && pnpm --filter @workspace/holtek-solutions run build
