@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Holtek Solutions LLC"
+version = "1.0.0"
+id = "artifacts/holtek-solutions"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21323
+
+[services.development]
+run = "pnpm --filter @workspace/holtek-solutions run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/holtek-solutions", "run", "build" ]
+publicDir = "artifacts/holtek-solutions/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21323"
+BASE_PATH = "/"
